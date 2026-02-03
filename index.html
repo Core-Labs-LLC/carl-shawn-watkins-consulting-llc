@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carl Shawn Watkins Consulting | Legal Leadership Coaching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-lavender: #E8D4EE;
+            --primary-lavender-dark: #D4B8DC;
+            --secondary-cream: #FAE9DD;
+            --secondary-peach: #F5E5D4;
+            --accent-navy: #1C2340;
+            --accent-navy-light: #2A3556;
+            --text-dark: #1a1a2e;
+            --text-muted: #5a5a6e;
+            --white: #ffffff;
+            --bg-warm: #FFFCF9;
+            --gradient-lavender: linear-gradient(135deg, #E8D4EE 0%, #F5E5D4 100%);
+            --gradient-hero: linear-gradient(180deg, rgba(232, 212, 238, 0.3) 0%, rgba(255, 252, 249, 1) 100%);
+            --shadow-soft: 0 4px 20px rgba(28, 35, 64, 0.08);
+            --shadow-medium: 0 8px 40px rgba(28, 35, 64, 0.12);
+            --shadow-glow: 0 0 60px rgba(232, 212, 238, 0.5);
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-warm);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        nav {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 4rem);
+            max-width: 1400px;
+            z-index: 1000;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--accent-navy);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(232, 212, 238, 0.1);
+            border-radius: 60px;
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        nav.scrolled {
+            top: 0.75rem;
+            padding: 0.6rem 2rem;
+            background: rgba(28, 35, 64, 0.98);
+            border: 1px solid rgba(232, 212, 238, 0.15);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 75px;
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        nav.scrolled .logo {
+            height: 75px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a:not(.btn) {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        .nav-links a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-lavender);
+            transition: width 0.3s var(--transition-smooth);
+        }
+
+        .nav-links a:not(.btn):hover {
+            color: var(--white);
+        }
+
+        .nav-links a:not(.btn):hover::after {
+            width: 100%;
+        }
+
+        .nav-links .btn {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            margin-left: 0.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.4s var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-lavender);
+            color: var(--accent-navy);
+            box-shadow: 0 4px 15px rgba(232, 212, 238, 0.3);
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 212, 238, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-navy);
+            border: 2px solid var(--primary-lavender-dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-lavender);
+            border-color: var(--primary-lavender);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--accent-navy);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-ghost:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 4% 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(
+                135deg,
+                rgba(28, 35, 64, 0.85) 0%,
+                rgba(28, 35, 64, 0.7) 30%,
+                rgba(212, 184, 220, 0.6) 70%,
+                rgba(232, 212, 238, 0.7) 100%
+            );
+        }
+
+        .hero-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(232, 212, 238, 0.2) 0%, transparent 60%);
+        }
+
+        .hero-overlay::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(28, 35, 64, 0.9), transparent);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-3deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s var(--transition-smooth) forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s var(--transition-smooth) 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--primary-lavender);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            animation: fadeInUp 1s var(--transition-smooth) 0.3s forwards;
+            opacity: 0;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary-lavender) 0%, #f5d7e3 50%, var(--secondary-cream) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            animation: fadeInUp 1s var(--transition-smooth) 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s var(--transition-smooth) 0.5s forwards;
+            opacity: 0;
+        }
+
+        .hero .btn-ghost {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero .btn-primary {
+            background: linear-gradient(135deg, var(--primary-lavender) 0%, var(--primary-lavender-dark) 100%);
+            color: var(--accent-navy);
+            font-weight: 700;
+        }
+
+        .hero .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(232, 212, 238, 0.4);
+        }
+
+        /* ==================== SCROLL INDICATOR ==================== */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 10;
+            animation: fadeInUp 1s var(--transition-smooth) 1s forwards;
+            opacity: 0;
+        }
+
+        .scroll-mouse {
+            width: 26px;
+            height: 42px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .scroll-wheel {
+            width: 4px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollWheel {
+            0%, 100% { opacity: 1; top: 8px; }
+            50% { opacity: 0.3; top: 20px; }
+        }
+
+        .scroll-indicator span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ==================== MISSION BANNER ==================== */
+        .mission-banner {
+            background: var(--accent-navy);
+            padding: 4rem 4%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(232, 212, 238, 0.1) 0%, transparent 50%, rgba(232, 212, 238, 0.1) 100%);
+        }
+
+        .mission-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mission-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .mission-text strong {
+            color: var(--primary-lavender);
+            font-style: normal;
+        }
+
+        /* ==================== STATS SECTION ==================== */
+        .stats {
+            padding: 4rem 4%;
+            background: var(--white);
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 16px;
+            background: var(--bg-warm);
+            transition: all 0.4s var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-navy);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about {
+            padding: 8rem 4%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-lavender), transparent);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .about-image .quote-card {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            max-width: 300px;
+            border-left: 4px solid var(--primary-lavender-dark);
+        }
+
+        .quote-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-card cite {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .about-text {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s var(--transition-smooth) 0.2s;
+        }
+
+        .about-text.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--primary-lavender-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .section-label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2rem;
+            height: 2px;
+            background: var(--primary-lavender-dark);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 600;
+            color: var(--accent-navy);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-text p:first-of-type {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+        }
+
+        /* ==================== PHILOSOPHY SECTION ==================== */
+        .philosophy {
+            padding: 8rem 4%;
+            background: var(--accent-navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            opacity: 0.5;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .philosophy .section-label {
+            color: var(--primary-lavender);
+            padding-left: 0;
+        }
+
+        .philosophy .section-label::before {
+            display: none;
+        }
+
+        .philosophy .section-title {
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .philosophy p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-highlight {
+            display: inline-block;
+            padding: 2rem 3rem;
+            background: rgba(232, 212, 238, 0.1);
+            border-radius: 16px;
+            border: 1px solid rgba(232, 212, 238, 0.2);
+            margin-top: 2rem;
+        }
+
+        .philosophy-highlight p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--primary-lavender);
+            margin: 0;
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services {
+            padding: 8rem 4%;
+            position: relative;
+        }
+
+        .services-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(40px);
+            border: 1px solid rgba(232, 212, 238, 0.3);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-lavender);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-lavender);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s var(--transition-smooth);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-lavender);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent-navy);
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ==================== TESTIMONIALS SECTION ==================== */
+        .testimonials {
+            padding: 8rem 4%;
+            background: var(--white);
+            position: relative;
+        }
+
+        .testimonials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonials .section-title {
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-slider {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-warm);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: left;
+            position: relative;
+            transition: all 0.4s var(--transition-smooth);
+            border: 1px solid rgba(232, 212, 238, 0.3);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-lavender);
+        }
+
+        .testimonial-quote {
+            color: var(--primary-lavender-dark);
+            margin-bottom: 1.5rem;
+            opacity: 0.6;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-lavender);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--accent-navy);
+            font-size: 0.9rem;
+        }
+
+        .author-info strong {
+            display: block;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .author-info span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 1024px) {
+            .testimonial-slider {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        /* ==================== CTA SECTION ==================== */
+        .cta {
+            padding: 8rem 4%;
+            background: var(--gradient-lavender);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+            animation: float 25s ease-in-out infinite;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: 8rem 4%;
+            background: var(--bg-warm);
+            position: relative;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 450px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent-navy);
+        }
+
+        .contact-text h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-text a,
+        .contact-text span {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary-lavender-dark);
+        }
+
+        .social-connect h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .social-links-contact {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-links-contact a {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s var(--transition-smooth);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .social-links-contact a:hover {
+            background: var(--accent-navy);
+            transform: translateY(-3px);
+        }
+
+        .social-links-contact svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent-navy);
+            stroke: var(--accent-navy);
+            transition: all 0.3s ease;
+        }
+
+        .social-links-contact a:hover svg {
+            fill: var(--white);
+            stroke: var(--white);
+        }
+
+        .contact-form-wrapper {
+            position: relative;
+        }
+
+        .contact-form-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-form-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--accent-navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border: 2px solid rgba(232, 212, 238, 0.5);
+            border-radius: 12px;
+            background: var(--bg-warm);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-lavender-dark);
+            background: var(--white);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .contact-info p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contact-details {
+                align-items: center;
+            }
+
+            .social-connect {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* ==================== NEWSLETTER SECTION ==================== */
+        .newsletter {
+            padding: 4rem 4%;
+            background: var(--accent-navy);
+            position: relative;
+        }
+
+        .newsletter-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .newsletter-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .newsletter-form {
+            flex-shrink: 0;
+        }
+
+        .newsletter-input-wrapper {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .newsletter-input-wrapper input {
+            padding: 0.875rem 1.25rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            width: 280px;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input-wrapper input:focus {
+            outline: none;
+            border-color: var(--primary-lavender);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .newsletter-input-wrapper input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .newsletter-disclaimer {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .newsletter-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-input-wrapper {
+                flex-direction: column;
+            }
+
+            .newsletter-input-wrapper input {
+                width: 100%;
+            }
+
+            .newsletter-input-wrapper .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--accent-navy);
+            color: var(--white);
+            padding: 4rem 4% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand .logo {
+            filter: brightness(0) invert(1);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--primary-lavender);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-lavender);
+            transform: translateY(-3px);
+        }
+
+        .social-links svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .about-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                width: calc(100% - 2rem);
+                padding: 0.5rem 1rem;
+                top: 0.5rem;
+            }
+
+            nav.scrolled {
+                top: 0.5rem;
+            }
+
+            .logo {
+                height: 55px;
+            }
+
+            nav.scrolled .logo {
+                height: 55px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image .quote-card {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin-top: 1.5rem;
+                max-width: 100%;
+            }
+
+            .mission-banner {
+                padding: 3rem 4%;
+            }
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ==================== LOADER ==================== */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-warm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            margin-bottom: 2rem;
+            animation: loaderPulse 1.5s ease-in-out infinite;
+        }
+
+        .loader-logo img {
+            height: 80px;
+            opacity: 0.8;
+        }
+
+        @keyframes loaderPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 3px;
+            background: rgba(232, 212, 238, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .loader-progress {
+            width: 0;
+            height: 100%;
+            background: var(--gradient-lavender);
+            border-radius: 10px;
+            animation: loaderProgress 1.5s ease-out forwards;
+        }
+
+        @keyframes loaderProgress {
+            0% { width: 0; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        /* ==================== CURSOR EFFECTS ==================== */
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary::before {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ==================== PARALLAX SHAPES ==================== */
+        .parallax-shape {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232, 212, 238, 0.3) 0%, transparent 70%);
+            top: 10%;
+            right: -100px;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(245, 229, 212, 0.4) 0%, transparent 70%);
+            bottom: 20%;
+            left: -50px;
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="PNG+(4).webp" alt="Loading...">
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo-link"><img src="PNG+(4).webp" alt="Carl Shawn Watkins Consulting" class="logo"></a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#services">Services</a>
+            <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=80" alt="Professional business leadership">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">Legal Leadership Transformation</div>
+                <h1>Lead with <span>Vulnerability.</span><br>Lead with <span>Truth.</span></h1>
+                <p>Revolutionizing leadership in the legal profession through authenticity, resilience, and the courage to be human. Transform challenges into stepping stones for greatness.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+                    <a href="#services" class="btn btn-ghost">Explore Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Mission Banner -->
+    <section class="mission-banner">
+        <div class="mission-content">
+            <p class="mission-text">Join me on this mission. Let's redefine leadership in the legal world—one that's grounded in <strong>resilience</strong>, <strong>compassion</strong>, and the unshakable belief that every obstacle is a stepping stone to greatness.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Legal Professionals Coached</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">Client Satisfaction Rate</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Law Firms Transformed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="carl-shawn-watkins.png" alt="Carl Shawn Watkins">
+                <div class="quote-card">
+                    <p>"A successful leader lays their foundation with the bricks others have thrown at them."</p>
+                    <cite>— Carl Shawn Watkins</cite>
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="section-label">About Carl</span>
+                <h2 class="section-title">I'm Carl Shawn</h2>
+                <p>The streets of Chicago's inner city raised me. They taught me about adversity, about disappointment, and about the grit it takes to overcome.</p>
+                <p>I'm not just talking theory; I lived it. I saw the struggles, but I also saw the hustles, the unwavering determination that makes you rise up when the world expects you to fall. That fire for resilience was forged on those blocks, and it's what fueled my purpose to flip the legal profession on its head.</p>
+                <p>Forget the stuffy traditions. I'm here to tell you that true strength isn't hiding behind a polished facade. It's found in the power of vulnerability, in the raw, real conversations that build genuine connection.</p>
+                <a href="#contact" class="btn btn-primary">Start Your Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="philosophy">
+        <div class="philosophy-content fade-in">
+            <span class="section-label">Our Philosophy</span>
+            <h2 class="section-title">Flipping the Script on Legal Leadership</h2>
+            <p>At Carl Shawn Watkins Consulting, we're rewriting the playbook. Forget everything you've been told about what makes a great leader. It ain't just about authority, big titles, or what's on your resume. We believe true power comes from being real.</p>
+            <p>In the cutthroat, high-stakes legal world, effective leadership isn't just about being tough; it's about being courageous enough to be human. We're not your average consultants. We're here to help legal professionals and firms unlock that next-level potential by embracing vulnerability as a superpower, not a weakness.</p>
+            <div class="philosophy-highlight">
+                <p>We dismantle the old-school armor and build up a culture of real talk, trust, and straight-up collaboration. That's where the real magic happens.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-header fade-in">
+            <span class="section-label">What We Offer</span>
+            <h2 class="section-title">Transformative Leadership Solutions</h2>
+            <p>Practical strategies and empathetic partnership designed for the unique challenges legal professionals face.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+                </div>
+                <h3>Authentic Insights</h3>
+                <p>My coaching provides practical, real-world strategies because I've been in your shoes. You'll benefit from insights gained from my own experiences, not just from a textbook.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    </svg>
+                </div>
+                <h3>Empathetic Partnership</h3>
+                <p>You'll work with a coach who understands the unique pressures and demands you face. This is a space of non-judgmental, empathetic support where you can feel understood and truly seen.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                </div>
+                <h3>Practical Strategies</h3>
+                <p>We'll focus on actionable tools and techniques. You'll learn how to navigate challenges with resilience and lead with a new sense of authenticity and confidence.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                    </svg>
+                </div>
+                <h3>Group Executive Coaching</h3>
+                <p>Build tight, unbreakable teams through group sessions that foster collaboration, trust, and collective growth. Transform your firm's culture from the inside out.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                    </svg>
+                </div>
+                <h3>Keynote Speaking</h3>
+                <p>Inspire your organization with powerful keynotes that challenge conventional thinking and ignite a passion for authentic, vulnerable leadership in the legal profession.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </svg>
+                </div>
+                <h3>Strategic Support</h3>
+                <p>Tailored strategic guidance that helps you navigate professional challenges and transform obstacles into opportunities for growth and lasting impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <div class="testimonials-content">
+            <span class="section-label">What Leaders Say</span>
+            <h2 class="section-title">Transformations That Speak</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 7H7.5C6.12 7 5 8.12 5 9.5V10C5 11.1 5.9 12 7 12H9C10.1 12 11 12.9 11 14V16.5C11 17.88 9.88 19 8.5 19H7.5C6.12 19 5 17.88 5 16.5V9.5C5 6.46 7.46 4 10.5 4H11V7ZM19 7H15.5C14.12 7 13 8.12 13 9.5V10C13 11.1 13.9 12 15 12H17C18.1 12 19 12.9 19 14V16.5C19 17.88 17.88 19 16.5 19H15.5C14.12 19 13 17.88 13 16.5V9.5C13 6.46 15.46 4 18.5 4H19V7Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">Carl's coaching transformed how I lead my team. His approach to vulnerable leadership helped me build deeper connections with my associates and create a more collaborative firm culture.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <strong>Jennifer Martinez</strong>
+                            <span>Managing Partner, Martinez & Associates</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 7H7.5C6.12 7 5 8.12 5 9.5V10C5 11.1 5.9 12 7 12H9C10.1 12 11 12.9 11 14V16.5C11 17.88 9.88 19 8.5 19H7.5C6.12 19 5 17.88 5 16.5V9.5C5 6.46 7.46 4 10.5 4H11V7ZM19 7H15.5C14.12 7 13 8.12 13 9.5V10C13 11.1 13.9 12 15 12H17C18.1 12 19 12.9 19 14V16.5C19 17.88 17.88 19 16.5 19H15.5C14.12 19 13 17.88 13 16.5V9.5C13 6.46 15.46 4 18.5 4H19V7Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">The executive coaching program was a game-changer. I learned to embrace authenticity in my leadership style, and my team's performance has improved dramatically.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <strong>Robert Kim</strong>
+                            <span>Senior Partner, Kim Legal Group</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 7H7.5C6.12 7 5 8.12 5 9.5V10C5 11.1 5.9 12 7 12H9C10.1 12 11 12.9 11 14V16.5C11 17.88 9.88 19 8.5 19H7.5C6.12 19 5 17.88 5 16.5V9.5C5 6.46 7.46 4 10.5 4H11V7ZM19 7H15.5C14.12 7 13 8.12 13 9.5V10C13 11.1 13.9 12 15 12H17C18.1 12 19 12.9 19 14V16.5C19 17.88 17.88 19 16.5 19H15.5C14.12 19 13 17.88 13 16.5V9.5C13 6.46 15.46 4 18.5 4H19V7Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">Carl's keynote at our annual conference inspired our entire organization. His message about leading with humanity resonated deeply with attorneys at every level.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SL</div>
+                        <div class="author-info">
+                            <strong>Sarah Liu</strong>
+                            <span>Executive Director, State Bar Association</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content fade-in">
+            <span class="section-label">Ready to Transform?</span>
+            <h2 class="section-title">Lead with Courage and Connection</h2>
+            <p>Whether you're a veteran attorney ready to lead with more soul, a firm looking to build a team that's tight and unbreakable, or a squad grinding through the toughest challenges—we've got you. We're not just consulting; we're building a new era of legal leaders.</p>
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-info fade-in">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Let's Start a Conversation</h2>
+                <p>Ready to transform your leadership journey? Reach out and let's discuss how we can work together to unlock your full potential.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:info@carlshawnwatkins.com">info@carlshawnwatkins.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Website</h4>
+                            <a href="https://carlshawnwatkins.com/" target="_blank">carlshawnwatkins.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Based In</h4>
+                            <span>Chicago, Illinois</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-connect">
+                    <h4>Connect With Me</h4>
+                    <div class="social-links-contact">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:info@carlshawnwatkins.com" aria-label="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper fade-in">
+                <div class="contact-form-card">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="How can we help?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your leadership goals..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-content fade-in">
+            <div class="newsletter-text">
+                <h3>Stay Connected</h3>
+                <p>Get leadership insights, tips, and updates delivered straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" action="#" method="POST">
+                <div class="newsletter-input-wrapper">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+                <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="PNG+(4).webp" alt="Carl Shawn Watkins Consulting" class="logo">
+                <p>Revolutionizing leadership in the legal profession through authenticity, resilience, and the courage to be human.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Executive Coaching</a></li>
+                    <li><a href="#services">Group Sessions</a></li>
+                    <li><a href="#services">Keynote Speaking</a></li>
+                    <li><a href="#services">Strategic Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://carlshawnwatkins.com/">Website</a></li>
+                    <li><a href="mailto:info@carlshawnwatkins.com">Email Us</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Carl Shawn Watkins Consulting LLC. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1600);
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Handle stat number animation
+                    if (entry.target.classList.contains('stat-item')) {
+                        const statNumber = entry.target.querySelector('.stat-number');
+                        if (statNumber && !statNumber.classList.contains('counted')) {
+                            animateNumber(statNumber);
+                            statNumber.classList.add('counted');
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .stat-item, .service-card, .about-image, .about-text, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add staggered animation delays for testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.15}s`;
+        });
+
+        // Number animation function
+        function animateNumber(element) {
+            const target = parseInt(element.dataset.target);
+            const duration = 2000;
+            const start = performance.now();
+            const startValue = 0;
+
+            function update(currentTime) {
+                const elapsed = currentTime - start;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function (ease-out)
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const currentValue = Math.floor(startValue + (target - startValue) * easeOut);
+                
+                element.textContent = currentValue + (element.dataset.suffix || '+');
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = target + (element.dataset.suffix || '+');
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        // Add suffix data attributes
+        document.querySelectorAll('.stat-number').forEach((el, index) => {
+            if (index === 2) { // Satisfaction rate
+                el.dataset.suffix = '%';
+            } else {
+                el.dataset.suffix = '+';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add staggered animation delays for service cards
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Add staggered animation delays for stat items
+        document.querySelectorAll('.stat-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.15}s`;
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg img');
+            const heroText = document.querySelector('.hero-text');
+            
+            if (heroBg && scrolled < window.innerHeight) {
+                heroBg.style.transform = `translateY(${scrolled * 0.4}px) scale(1.1)`;
+            }
+            if (heroText && scrolled < window.innerHeight) {
+                heroText.style.opacity = 1 - (scrolled * 0.002);
+                heroText.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
+
+        // Smooth reveal for section titles
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.section-title').forEach(title => {
+            title.style.opacity = '0';
+            title.style.transform = 'translateY(20px)';
+            title.style.transition = 'all 0.8s var(--transition-smooth)';
+            titleObserver.observe(title);
+        });
+    </script>
+</body>
+</html>
