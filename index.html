@@ -376,46 +376,11 @@
             opacity: 1;
         }
 
-        /* Elegant staggered reveal animations */
-        @keyframes elegantReveal {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-                filter: blur(10px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-                filter: blur(0);
-            }
-        }
-
-        @keyframes softScaleIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.95) translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        @keyframes slideReveal {
-            0% {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInUp {
+        /* Pleasant fade-up animation - matches scroll animations */
+        @keyframes pleasantFadeUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -440,7 +405,7 @@
             text-transform: uppercase;
             margin-bottom: 2.5rem;
             opacity: 0;
-            animation: elegantReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards, badgeGlow 3s ease-in-out 1.5s infinite;
+            animation: pleasantFadeUp 0.8s var(--transition-smooth) 0.2s forwards, badgeGlow 3s ease-in-out 2s infinite;
         }
 
         @keyframes badgeGlow {
@@ -481,23 +446,12 @@
         .hero h1 .line-inner {
             display: block;
             opacity: 0;
-            transform: translateY(100%);
-            animation: headlineSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            transform: translateY(30px);
+            animation: pleasantFadeUp 0.8s var(--transition-smooth) forwards;
         }
 
-        .hero h1 .line:nth-child(1) .line-inner { animation-delay: 0.5s; }
-        .hero h1 .line:nth-child(2) .line-inner { animation-delay: 0.7s; }
-
-        @keyframes headlineSlideUp {
-            0% {
-                opacity: 0;
-                transform: translateY(100%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .hero h1 .line:nth-child(1) .line-inner { animation-delay: 0.4s; }
+        .hero h1 .line:nth-child(2) .line-inner { animation-delay: 0.55s; }
 
         .hero h1 span {
             background: linear-gradient(135deg, var(--primary-lavender) 0%, #f5d7e3 30%, var(--secondary-cream) 60%, var(--primary-lavender) 100%);
@@ -547,7 +501,7 @@
             color: rgba(232, 212, 238, 0.9);
             margin-bottom: 1.5rem;
             opacity: 0;
-            animation: elegantReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.95s forwards;
+            animation: pleasantFadeUp 0.8s var(--transition-smooth) 0.7s forwards;
         }
 
         .hero p {
@@ -559,7 +513,7 @@
             margin-right: auto;
             line-height: 1.9;
             opacity: 0;
-            animation: elegantReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+            animation: pleasantFadeUp 0.8s var(--transition-smooth) 0.85s forwards;
         }
 
         .hero-buttons {
@@ -572,11 +526,11 @@
 
         .hero-buttons .btn {
             opacity: 0;
-            animation: softScaleIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation: pleasantFadeUp 0.8s var(--transition-smooth) forwards;
         }
 
-        .hero-buttons .btn:nth-child(1) { animation-delay: 1.3s; }
-        .hero-buttons .btn:nth-child(2) { animation-delay: 1.45s; }
+        .hero-buttons .btn:nth-child(1) { animation-delay: 1s; }
+        .hero-buttons .btn:nth-child(2) { animation-delay: 1.1s; }
 
         .hero .btn-primary {
             background: linear-gradient(135deg, var(--primary-lavender) 0%, var(--primary-lavender-dark) 100%);
@@ -630,6 +584,8 @@
             gap: 2rem;
             flex-wrap: wrap;
             justify-content: center;
+            opacity: 0;
+            animation: pleasantFadeUp 0.8s var(--transition-smooth) 1.25s forwards;
         }
 
         .trust-item {
@@ -638,13 +594,7 @@
             gap: 0.5rem;
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.85rem;
-            opacity: 0;
-            animation: slideReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
-
-        .trust-item:nth-child(1) { animation-delay: 1.6s; }
-        .trust-item:nth-child(3) { animation-delay: 1.75s; }
-        .trust-item:nth-child(5) { animation-delay: 1.9s; }
 
         .trust-item svg {
             width: 18px;
@@ -656,12 +606,7 @@
             width: 1px;
             height: 20px;
             background: rgba(255, 255, 255, 0.2);
-            opacity: 0;
-            animation: elegantReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
-
-        .trust-divider:nth-child(2) { animation-delay: 1.7s; }
-        .trust-divider:nth-child(4) { animation-delay: 1.85s; }
 
         /* ==================== SCROLL INDICATOR ==================== */
         .scroll-indicator {
@@ -1824,67 +1769,6 @@
             transform: translateX(0);
         }
 
-        /* ==================== LOADER ==================== */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-warm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
-        }
-
-        .loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader-content {
-            text-align: center;
-        }
-
-        .loader-logo {
-            margin-bottom: 2rem;
-            animation: loaderPulse 1.5s ease-in-out infinite;
-        }
-
-        .loader-logo img {
-            height: 80px;
-            opacity: 0.8;
-        }
-
-        @keyframes loaderPulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-        }
-
-        .loader-bar {
-            width: 200px;
-            height: 3px;
-            background: rgba(232, 212, 238, 0.3);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .loader-progress {
-            width: 0;
-            height: 100%;
-            background: var(--gradient-lavender);
-            border-radius: 10px;
-            animation: loaderProgress 1.5s ease-out forwards;
-        }
-
-        @keyframes loaderProgress {
-            0% { width: 0; }
-            50% { width: 70%; }
-            100% { width: 100%; }
-        }
-
         /* ==================== CURSOR EFFECTS ==================== */
         .btn {
             position: relative;
@@ -1963,18 +1847,6 @@
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <img src="PNG+(4).webp" alt="Loading...">
-            </div>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#" class="logo-link"><img src="PNG+(4).webp" alt="Carl Shawn Watkins Consulting" class="logo"></a>
@@ -2422,12 +2294,6 @@
 
     <script>
         // Loader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 1600);
-        });
-
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         let lastScroll = 0;
